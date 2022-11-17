@@ -1,0 +1,39 @@
+
+1. if subsegment satisfies -> supersegment satisfies => find smallest
+
+R=-1
+for L = 0..n-1
+    while not good():
+        R++
+        add(a[R])
+    if good():
+        update_answer()
+    remove(a[L])
+
+
+
+2. if subsegment satisfies <- supersegment satisfies => find largest
+
+L = 0
+for R = 0..n-1
+    add(a[R]) // Update data maintained after removing a[R]
+    while not good():
+        remove(a[L])
+        L++
+    if good():
+        update_answer()
+
+
+
+A = 2 4 5 7 8 9, n
+B = 1 2 3 6 8 10, m
+
+C = AABABAAABABB
+
+
+i1 => j1
+i2 => j2
+
+
+HOLY GRAIL: if j(i) is ALWAYS INCREASING OR ALWAYS DECREASING, 2-pointer method might work
+ 

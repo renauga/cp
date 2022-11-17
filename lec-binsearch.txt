@@ -1,0 +1,23 @@
+
+int l=L, r=R, best=-1, mid; O( log(R-L) * T(q))
+while(l<=r) {
+    mid = l + (r-l)/2;
+    if(q(mid)) {
+        best=mid;
+        r=mid-1;
+    } else {
+        l=mid+1;
+    }
+}
+return best;
+
+
+
+YYYYYYYYYYNNNNN
+NNNNNNNNNNYYYYY
+l      m      r
+        l     r
+
+
+
+HOLY GRAIL: if f(i) is ALWAYS INCREASING OR ALWAYS DECREASING, binary search will work
